@@ -1,6 +1,8 @@
 '''Move inside array with arrow keys'''
+import time
 import keyboard
-import sys
+# import sys
+import os
 
 def in_range(nx, ny):
     return 0 <= nx and nx < 10 and 0 <= ny and ny < 10
@@ -19,17 +21,18 @@ for i in range(1, 9):
     arr_2d[i] = ['■', '■', '■', '■', '□', '□', '■', '■', '■', '■', '■']
 
 while True:
-    print()
+    # print()
+    os.system("cls")
     for i in range(10):
         for j in range(10):
             print(arr_2d[i][j], end=' ')
         print()
-    sys.stdout.write("\033[A" * 11)
+    # sys.stdout.write("\033[A" * 11)
     
     event = keyboard.read_event()
 
     if event.event_type == keyboard.KEY_UP and event.name == "esc":
-        print("\n" * 12 + "Goodbye.\n")
+        print("\nGoodbye.\n")
         break
     elif event.event_type == keyboard.KEY_UP and event.name in arrow_keys:
         nx, ny = x + dxs[event.name], y + dys[event.name]
@@ -37,7 +40,12 @@ while True:
         if in_range(nx, ny) and arr_2d[nx][ny] != '■':
             arr_2d[x][y] = '□'
             if arr_2d[nx][ny] == 'F':
-                print("\n" * 12 + "Congratulations. You won!\n")
+                string = "\n=========================\nCongratulations. You won!\n=========================\n\n"
+                
+                for char in string:
+                    print(char, end='')
+                    time.sleep(0.045)
+
                 break
             else:
                 arr_2d[nx][ny] = '●'
