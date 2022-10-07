@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "object.h"
+#include "object.c"
 
 int main() {
     Object obj = _object_init();
