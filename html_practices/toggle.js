@@ -5,11 +5,6 @@ toggleBtn.addEventListener("click", function() {
     var artElem = document.querySelector("article");
     var artClasses = artElem.classList;
     
-    if (navClasses.contains("hide")) {
-        navClasses.remove("hide");
-        artClasses.add("menuon");
-    } else {
-        navClasses.add("hide");
-        artClasses.remove("menuon");
-    }
+    navClasses.toggle("hide");
+    artClasses.toggle("menuon");
 });
