@@ -2,9 +2,9 @@
 
 import random
 
-choices = ["Rock", "Paper", "Scissors"]
 prey_dict = {"Rock": "Scissors", "Paper": "Rock", "Scissors": "Paper"}
 
+choices = tuple(prey_dict.keys())
 cpu_choice = random.choice(choices)
 user_choice = None
 
