@@ -3,6 +3,7 @@
 - [Fibonacci Sequence Practice](fibonacci.py)
 - [Keyboard Event(Arrow Keys and ESC)](keyboard_event.py)
 - [Moving inside Array with Array Keys](keyboard_move_inside_array.py)
+- [Rock Paper Scissors Game with CPU](rockpaperscissors.py)
 
 ## HTML, CSS, JavaScript
 - Toggle Navigation Bar
